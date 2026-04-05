@@ -8,8 +8,15 @@ typedef struct {
 } Student;
 
 void insertion_sort(Student students[], int n) {
-    // TODO: 在这里添加你的代码
-    // I AM NOT DONE
+    for (int i = 1; i < n; i++) {
+        Student key = students[i];
+        int j = i - 1;
+        while (j >= 0 && students[j].score < key.score) {
+            students[j + 1] = students[j];
+            j--;
+        }
+        students[j + 1] = key;
+    }
 }
 
 int main(void) {
@@ -18,7 +25,7 @@ int main(void) {
     int n = 0;
     
     // 打开文件（从命令行参数获取文件名）
-    file = fopen("01_students.txt", "r");
+    file = fopen("exercises/01_insert_sort/01_students.txt", "r");
     if (!file) {
         printf("错误：无法打开文件 01_students.txt\n");
         return 1;
