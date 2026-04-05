@@ -25,7 +25,7 @@ int main(void) {
     int n = 0;
     
     // 打开文件（从命令行参数获取文件名）
-    file = fopen("exercises/01_insert_sort/01_students.txt", "r");
+    file = fopen("01_students.txt", "r");
     if (!file) {
         printf("错误：无法打开文件 01_students.txt\n");
         return 1;
